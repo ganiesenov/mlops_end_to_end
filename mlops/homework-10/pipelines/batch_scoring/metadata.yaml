@@ -1,0 +1,119 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework-10/data_loaders/icy_arcanist.py
+  downstream_blocks:
+  - masterful_flower
+  - run_prediction_service
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: icy arcanist
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: icy_arcanist
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_path: homework-10/data_loaders/run_prediction_service.py
+    file_source:
+      path: homework-10/data_loaders/run_prediction_service.py
+  downstream_blocks:
+  - run_testing
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: run_prediction_service
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - icy_arcanist
+  uuid: run_prediction_service
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: homework-10/data_loaders/run_testing.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: run_testing
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - run_prediction_service
+  uuid: run_testing
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: homework-10/transformers/masterful_flower.py
+  downstream_blocks:
+  - illusory_violet
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: masterful flower
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - icy_arcanist
+  uuid: masterful_flower
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    file_source:
+      path: homework-10/transformers/illusory_violet.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: illusory violet
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - masterful_flower
+  uuid: illusory_violet
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-11-29 21:57:10.653330+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: batch scoring
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: batch_scoring
+variables_dir: /home/src/mage_data/homework-10
+widgets: []

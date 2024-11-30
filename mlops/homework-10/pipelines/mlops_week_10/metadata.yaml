@@ -1,0 +1,99 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework-10/data_loaders/load_from_the_web.py
+  downstream_blocks:
+  - intuitive_hill
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load from the web
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_from_the_web
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework-10/transformers/intuitive_hill.py
+  downstream_blocks:
+  - training
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: intuitive hill
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - load_from_the_web
+  uuid: intuitive_hill
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework-10/transformers/training.py
+  downstream_blocks:
+  - data_exporter_to_mlflow
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: training
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - intuitive_hill
+  uuid: training
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: homework-10/data_exporters/data_exporter_to_mlflow.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: data exporter to mlflow
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - training
+  uuid: data_exporter_to_mlflow
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-11-23 06:44:14.350251+00:00'
+data_integration: null
+description: my homework pipeline
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: mlops week 10
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: mlops_week_10
+variables_dir: /home/src/mage_data/homework-10
+widgets: []
