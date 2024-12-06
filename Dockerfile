@@ -12,7 +12,6 @@ ENV USER_CODE_PATH=${USER_CODE_PATH}
 
 # Install pipenv and project dependencies
 RUN pip3 install pipenv
-COPY Pipfile Pipfile.lock ./
 RUN pipenv install --system --deploy
 
 # Install custom Python libraries and dependencies for your project
