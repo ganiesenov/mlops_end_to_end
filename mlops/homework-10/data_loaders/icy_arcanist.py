@@ -13,7 +13,7 @@ MLFLOW_TRACKING_URI = 'http://mlflow:5000'
 client = MlflowClient(tracking_uri=MLFLOW_TRACKING_URI)
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
-RUN_ID = 'ea492adbf1274bcc8136a92ecdb7d7e4'
+RUN_ID = 'ea8e9680e7d94550a51c4a400c6f1bc5'
 
 @data_loader
 def load_data_from_api(*args, **kwargs):

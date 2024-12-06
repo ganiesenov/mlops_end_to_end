@@ -17,7 +17,7 @@ services:
       # Local machine’s SSH keys to pull and push to your GitHub repository.
       - ~/.ssh:/root/.ssh:ro
       # Local machine’s GitHub configs
-      - ~/.gitconfig:/root/.gitconfig:ro
+      # - ~/.gitconfig:/root/.gitconfig:ro
     restart: on-failure:5
     networks:
       - app-network
